@@ -2,6 +2,7 @@
 
 [Beyond Compare 4](http://www.scootersoftware.com/) in a Docker container.
 
+with VNC base image from jlesage/baseimage-gui
 
 ## Installation
 
