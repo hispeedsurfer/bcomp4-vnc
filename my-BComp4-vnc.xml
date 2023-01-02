@@ -1,0 +1,42 @@
+<?xml version="1.0"?>
+<Container version="2">
+  <Name>BComp4-vnc</Name>
+  <Repository>docker.io/[reponame]</Repository>
+  <Registry>https://hub.docker.com/repository/docker/[reponame]/</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support/>
+  <Project/>
+  <Overview>Beyond Compare is a multi-platform utility that combines directory compare and file compare functions in one package.  Use it to manage source code, keep directories in sync, compare program output, etc.</Overview>
+  <Category/>
+  <WebUI>http://[IP]:[PORT:5805]</WebUI>
+  <TemplateURL/>
+  <Icon>https://www.scootersoftware.com/images/bc4only.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  <CPUset/>
+  <DateInstalled>1672693125</DateInstalled>
+  <DonateText/>
+  <DonateLink/>
+  <Requires/>
+  <Config Name="Storage" Target="/storage" Default="/mnt/user" Mode="rw" Description="This location contains files from your host that need to be accessible to the application. Container path: /storage" Type="Path" Display="always-hide" Required="True" Mask="False">/mnt/user</Config>
+  <Config Name="Disks" Target="/mnt/disks" Default="" Mode="ro" Description="" Type="Path" Display="always" Required="false" Mask="false">/mnt/disks</Config>
+  <Config Name="Config Directory" Target="/config" Default="/mnt/cache/appdata/bcomp4-vnc" Mode="rw" Description="This is where the application stores its configuration, states, log and any files needing persistency. Container path: /config" Type="Path" Display="advanced-hide" Required="True" Mask="False">/mnt/cache/appdata/bcomp4-vnc</Config>
+  <Config Name="Trash" Target="/trash" Default="/dev/null" Mode="rw" Description="This is where bcomp4-vnc moves files when they are sent to trash.  Usage of the trash is optional.  The default value of /dev/null can be kept if the trash is not wanted." Type="Path" Display="advanced-hide" Required="False" Mask="False">/dev/null</Config>
+  <Config Name="User ID" Target="USER_ID" Default="99" Mode="" Description="ID of the user the application runs as." Type="Variable" Display="advanced-hide" Required="True" Mask="False">99</Config>
+  <Config Name="Group ID" Target="GROUP_ID" Default="100" Mode="" Description="ID of the group the application runs as." Type="Variable" Display="advanced-hide" Required="True" Mask="False">100</Config>
+  <Config Name="Umask" Target="UMASK" Default="0000" Mode="" Description="Mask that controls how file permissions are set for newly created files.  The value of the mask is in octal notation." Type="Variable" Display="advanced" Required="False" Mask="False">0000</Config>
+  <Config Name="Niceness (priority)" Target="APP_NICENESS" Default="0" Mode="" Description="Priority at which the application should run.  A niceness value of -20 is the highest priority and 19 is the lowest priority. NOTE: Setting a negative value requires additional permissions.  Thus, " Type="Variable" Display="advanced" Required="False" Mask="False">0</Config>
+  <Config Name="Display Width" Target="DISPLAY_WIDTH" Default="1920" Mode="" Description="Width (in pixels) of the application's window." Type="Variable" Display="advanced" Required="False" Mask="False">1920</Config>
+  <Config Name="Display Height" Target="DISPLAY_HEIGHT" Default="1080" Mode="" Description="Height (in pixels) of the application's window." Type="Variable" Display="advanced" Required="False" Mask="False">1080</Config>
+  <Config Name="Dark Mode" Target="DARK_MODE" Default="0" Mode="" Description="When set to " Type="Variable" Display="advanced" Required="False" Mask="False">0</Config>
+  <Config Name="Secure Connection" Target="SECURE_CONNECTION" Default="0" Mode="" Description="Whether or not an encrypted connection should be used to access the application's GUI.  Set to " Type="Variable" Display="advanced" Required="False" Mask="False">0</Config>
+  <Config Name="Secure Connection VNC Method" Target="SECURE_CONNECTION_VNC_METHOD" Default="SSL" Mode="" Description="Method used to perform the secure VNC connection.  Possible values are " Type="Variable" Display="advanced" Required="False" Mask="False">SSL</Config>
+  <Config Name="Secure Connection Certificate Check Interval" Target="SECURE_CONNECTION_CERTS_CHECK_INTERVAL" Default="60" Mode="" Description="Interval, in seconds, at which the system verifies if web or VNC certificates have changed.  When a change is detected, the affected services are automatically restarted.  A value of " Type="Variable" Display="advanced" Required="False" Mask="False">60</Config>
+  <Config Name="Web Listening Port (Non-Bridge Network Type)" Target="WEB_LISTENING_PORT" Default="5805" Mode="" Description="Port used by the web server to serve the UI of the application.  This port is used internally by the container and it is usually not required to be changed.  NOTE: This setting is relevant only when the Network Type is set to something else than Bridge." Type="Variable" Display="advanced" Required="False" Mask="False">5805</Config>
+  <Config Name="VNC Listening Port (Non-Bridge Network Type)" Target="VNC_LISTENING_PORT" Default="5905" Mode="" Description="Port used by the VNC server to serve the UI of the application.  This port is used internally by the container and it is usually not required to be changed.  NOTE: This setting is relevant only when the Network Type is set to something else than Bridge." Type="Variable" Display="advanced" Required="False" Mask="False">5905</Config>
+  <Config Name="WEB Port for GUI (Bridge Network Type)" Target="5805" Default="7801" Mode="tcp" Description="Port to access the application's GUI via the web interface.  NOTE: This applies only when Network Type is set to Bridge." Type="Port" Display="advanced-hide" Required="True" Mask="False">7802</Config>
+  <Config Name="VNC Port for GUI (Bridge Network Type)" Target="5905" Default="7901" Mode="tcp" Description="Port to access the application's GUI via VNC protocol.  Optional if no VNC client is used.  NOTE: This applies only when Network Type is set to Bridge." Type="Port" Display="advanced-hide" Required="False" Mask="False">7902</Config>
+</Container>
