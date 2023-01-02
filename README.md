@@ -23,3 +23,12 @@ $ docker run [-d] \
     [-p <HOST_PORT>:<CONTAINER_PORT>]... \
   hispeedsurfer/bcomp4-vnc
 ```
+## UnRaid
+
+To use this in UnRaid you have build an image, push it to a registry like https://hub.docker.com
+
+```bash
+$ docker image build --no-cache -t <IMAGE_NAME> .
+$ docker login
+$ docker push <IMAGE_NAME>
+```
