@@ -12,9 +12,6 @@ ARG DOCKER_IMAGE_VERSION=
 # Define software versions.
 ARG BCOMP_VERSION=4.4.4
 
-# Define software download URLs.
-#ARG DUPEGURU_URL=https://github.com/arsenetar/dupeguru/archive/${BCOMP_VERSION}.tar.gz
-
 # Define working directory.
 WORKDIR /tmp
 
@@ -45,7 +42,6 @@ RUN \
     install_app_icon.sh "$APP_ICON_URL"
 
 # Add files.
-#COPY rootfs/ /
 COPY startapp.sh /startapp.sh
 
 # Set internal environment variables.
@@ -65,5 +61,4 @@ LABEL \
     org.label-schema.name="Beyond Compare 4" \
     org.label-schema.description="Docker container for Beyond Compare 4" \
     org.label-schema.version="${DOCKER_IMAGE_VERSION:-unknown}" \
-    #org.label-schema.vcs-url="https://github.com/jlesage/docker-dupeguru" \
     org.label-schema.schema-version="1.0"
