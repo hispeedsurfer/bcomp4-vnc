@@ -61,4 +61,5 @@ LABEL \
     org.label-schema.name="Beyond Compare 4" \
     org.label-schema.description="Docker container for Beyond Compare 4" \
     org.label-schema.version="${DOCKER_IMAGE_VERSION:-unknown}" \
+    org.label-schema.vcs-url="https://github.com/hispeedsurfer/bcomp4-vnc" \
     org.label-schema.schema-version="1.0"
